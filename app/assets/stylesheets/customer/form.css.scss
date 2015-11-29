@@ -1,0 +1,80 @@
+@import 'colors';
+@import 'dimensions';
+
+div#wrapper {
+  div#container {
+    div#generic-form {
+      width: 480px;
+      margin: $very_wide auto;
+      padding: $very_wide;
+      border-radius: 8px 8px;
+      border: solid 1px #c5c3c3;
+      background-color: #fdfefe;
+
+
+      form {
+        div {
+          padding: $wide;
+          label {
+            display: block;
+            padding: $moderate 0;
+          }
+          label.required {
+            font-size: 14px;
+            color: #676d74;
+          }
+          label.required:after {
+            content: '*';
+            padding-left: $narrow;
+            color: $red;
+          }
+          input[type='checkbox']+label { display: inline-block }
+          input[type='radio']+label { display: inline-block }
+        }
+        div.input-block {
+          input { margin-right: $narrow * 2; }
+        }
+        input#customer_change_password_form_current_password {
+          width: 266px;
+        }
+        input#customer_change_password_form_new_password {
+          width: 266px;
+        }
+        input#customer_change_password_form_new_password_confirmation {
+          width: 266px;
+        }
+        a.edit_cancel {
+
+          color: #ffffff;
+
+        }
+        div.space {
+          display: inline-block;
+          padding-left: 20px;
+        }
+        div.notes {
+          text-align: right;
+          font-size: $small;
+          span.mark { color: $red }
+        }
+        div.buttons {
+          text-align: center;
+          input[type='submit'] {
+            padding: $wide $very_wide;
+          }
+        }
+        div.field_with_errors {
+          display: inline;
+          padding: 0;
+          label { color: $red; }
+          input { background-color: $pink; }
+        }
+        div.error-message {
+          color: $red;
+          font-size: $small;
+          padding: 0 ;
+        }
+      }
+    }
+  }
+}

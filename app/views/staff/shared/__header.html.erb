@@ -1,0 +1,23 @@
+<header >
+<div id="header" class="header">
+  <h1 id="site_title" class="site_title">
+    <%= link_to 'Menu', :staff_root, class: 'logo-mark' %>
+  </h1>
+  <ul id="tabs" class="tabs header-item">
+    <%= content_tag(:span, flash.notice, class: 'notice') if flash.notice %>
+    <%= content_tag(:span, flash.alert, class: 'alert') if flash.alert %>
+  </ul>
+  <ul id="utility_nav" class="tabs header-item">
+    <ui id="current_user">
+    <%=
+      if current_staff_member
+        link_to 'ログアウト', :staff_session, method: :delete
+      else
+        link_to 'ログイン', :staff_login
+      end
+    %>
+    <%= link_to 'アカウント', :staff_account if current_staff_member %>
+    </ui>
+  </ul>
+  </div>
+</header>

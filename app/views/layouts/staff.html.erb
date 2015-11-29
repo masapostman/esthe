@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= document_title%></title>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= stylesheet_link_tag    'staff', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'staff', 'data-turbolinks-track' => true %>
+  <meta name="globalsign-domain-verification" content="czV6fX99rQMSP3Mnm2LqqeZxp0Yrnt5oUjW2hds4ef" /> 
+  <%= csrf_meta_tags %>
+</head>
+<body class="login-page">
+ <div id="wrapper">
+
+		<%= render 'staff/shared/header' %>
+    <div id="container">
+			  <%= yield %>
+    </div>
+
+</div>
+    <%= render 'staff/shared/footer' %>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+@import 'colors';
+@import 'dimensions';
+
+nav.pagination {
+  margin: $moderate 0;
+  padding: $moderate 0;
+  display: inline-block;
+  /*border-top: solid $very_light_gray 1px;
+  border-bottom: solid $very_light_gray 1px; */
+  border-top: solid #c5c3c3 1px;
+  border-bottom: solid #c5c3c3 2px;
+  span.page, span.first, span.prev, span.next, span.last {
+    display: inline-block;
+    background-color: $light_gray;
+    padding: $narrow $moderate;
+    a {
+      text-decoration: none;
+    }
+  }
+  span.current {
+    background-color: $dark_gray;
+    color: #eeeeee;
+  }
+  span.disabled {
+    color: #2986ec;
+  }
+  span.gap {
+    background-color: transparent;
+  }
+}

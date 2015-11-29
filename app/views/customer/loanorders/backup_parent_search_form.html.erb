@@ -1,0 +1,17 @@
+<%= form_for @search_form, as: 'search', url: :customer_loanorders,
+	html: { method: :get,class: "search_parent"} do |f| %>
+
+	<%= markup(:ul) do |m|
+    p = FormPresenter.new(f, self)
+    m.ui do 
+    m << p.collection_select_block(:store_code,'店舗選択:',@customer.order(:store_code),:store_code,:store_name,{:class => "easy-select-box esb-displayer"})
+    end
+    m.ui do
+      m << p.date_field_block(:order_date_from, '申 込 日:　',class:"search_",　id:"search_order_date_form")
+      m << p.date_field_block(:order_date_to, '〜　',class:"search_",id:"search_order_date_to")
+
+      m << f.submit('検索')
+
+   end
+  end %>
+<% end %>

@@ -1,0 +1,12 @@
+<% @title = 'システム担当者の編集' %>
+<h1><%= @title %></h1>
+
+<div id="generic-form">
+  <%= form_for [ :admin, @staff_member ] do |f| %>
+    <%= render 'form', f: f %>
+    <div class="buttons" style="text-align:center;">
+      <%= f.submit '更新',id:"edit_submit" %>
+      <%= link_to 'キャンセル',:admin_staff_members,id:"edit_cancel" %>
+    </div>
+  <% end %>
+</div>

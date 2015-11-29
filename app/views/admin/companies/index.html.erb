@@ -1,0 +1,39 @@
+<% @title = '加盟店一覧' %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+
+  <div class="links_narrow">
+    <%= link_to '新規登録', :new_admin_company %>
+  </div>
+
+  <%= paginate @companies %>
+
+  <table class="listing_narrow">
+    <tr>
+      <th>加盟店コード</th>
+      <th>加盟店名</th>
+      <th>アクション</th>
+    </tr>
+    <% @companies.each do |m| %>
+      <% p = CustomerPresenter.new(m, self) %>
+      <tr>
+        <td width="100px" style="text-align:center;"><%= m.company_code %></td>
+        <td><%= m.company_name %></td>
+
+        <td class="actions">
+          <%= link_to '編集', [ :edit, :admin, m ] %> |
+          <%= link_to '削除', [ :admin, m ], method: :delete,
+            data: { confirm: '本当に削除しますか？' } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @companies %>
+
+  <div class="links_narrow">
+    <%= link_to '新規登録', :new_admin_company %>
+  </div>
+
+</div>

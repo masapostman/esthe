@@ -1,0 +1,141 @@
+body.logged_out #content_wrapper #active_admin_content {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.37);
+    background: none repeat scroll 0% 0% #FFF; 
+    padding: 13px 30px;
+}
+body.logged_out #content_wrapper {
+    width: 550px;
+    margin: 70px auto;
+}
+body.logged_out h2 {
+background: #efefef;
+background: -webkit-linear-gradient(-90deg, #efefef, #dfe1e2);
+background: -moz-linear-gradient(-90deg, #efefef, #dfe1e2);
+background: linear, 180deg, #efefef, #dfe1e2;
+
+border: solid 1px #cdcdcd;
+border-color: #d4d4d4;
+border-top-color: #e6e6e6;
+border-right-color: #d4d4d4;
+border-bottom-color: #cdcdcd;
+border-left-color: #d4d4d4;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 1px white inset;
+font-size: 1.0em;
+font-weight: bold;
+line-height: 18px;
+margin-bottom: 0.5em;
+color: #5e6469;
+padding: 5px 10px 3px 10px;
+background: #6a7176;
+background: -webkit-linear-gradient(-90deg, #6a7176, #4d5256);
+background: -moz-linear-gradient(-90deg, #6a7176, #4d5256);
+background: linear, 180deg, #6a7176, #4d5256;
+
+border-bottom: 1px solid #44484b;
+text-shadow: black 0 1px 0;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+border: none;
+color: #fff;
+margin: -13px -30px 20px -30px;
+}
+h2 {
+display: block;
+font-size: 1.5em;
+-webkit-margin-before: 0.83em;
+-webkit-margin-after: 0.83em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-weight: bold;
+}
+/*body.logged_out h2 {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 5px 10px 3px;
+    background: -moz-linear-gradient(-90deg, #6A7176, #4D5256) repeat scroll 0% 0% transparent;
+    background: -moz-linear-gradient(-90deg, #6A7176, #4D5256) repeat scroll 0% 0% transparent;
+    text-shadow: 0px 1px 0px #000;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    border: medium none;
+    color: #FFF;
+    margin: -13px -30px 20px;
+} */
+
+
+body.logged_out #login form fieldset li {
+    padding: 10px 0px;
+}
+form ol, form ul {
+    list-style: outside none none;
+}
+ol {
+    list-style-type: decimal;
+}
+ol, ul {
+    list-style: outside none none;
+}
+ol {
+    list-style-type: decimal;
+}
+
+body.logged_out #login form fieldset {
+    box-shadow: none;
+    background: none repeat scroll 0% 0% transparent;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+form fieldset.inputs {
+    background: none repeat scroll 0% 0% #F4F4F4;
+    border-radius: 4px;
+    box-shadow: 0px 1px 4px #DDD inset;
+}
+form fieldset {
+    border: 0px none;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+}
+form fieldset ol > li label {
+    padding-top: 5px;
+    display: block;
+    width: 22%;
+    float: left;
+    font-size: 1em;
+    font-weight: bold;
+    color: #5E6469;
+}
+body.logged_out #login form fieldset input[type="text"], 
+body.logged_out #login form fieldset input[type="email"], 
+body.logged_out #login form fieldset input[type="password"] {
+    width: 70%;
+    font-size: 14px;
+    line-height: 24px;
+}
+#login form input[type="submit"], form input[type="button"], form button {
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1em;
+    font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;
+    line-height: 14px;
+    margin-right: 3px;
+    padding: 7px 16px 6px;
+    text-decoration: none;
+    background: #838A90;
+    background: -webkit-linear-gradient(-90deg, #838A90, #414549) repeat scroll 0% 0% transparent;
+    background: -moz-linear-gradient(-90deg, #838A90, #414549) repeat scroll 0% 0% transparent;    text-shadow: 0px 1px 0px #000;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: #616A71 #484E53 #363B3F;
+    color: #EFEFEF;
+    cursor: pointer;
+}
+
+
+
+

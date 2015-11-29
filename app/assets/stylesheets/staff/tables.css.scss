@@ -1,0 +1,76 @@
+@import 'colors';
+@import 'dimensions';
+
+div.table-wrapper {
+  width: 95%;
+  margin: 0 auto;
+  background: #ffffff;
+  font-size: 12px;
+
+  div.links {
+    text-align: right;
+    padding: $moderate;
+  }
+
+  table {
+    margin: $moderate auto 0;
+    border: solid 2px #c5c3c3;
+    border-collapse: separate;
+    border-spacing: 1px;
+    tr {
+      th {
+        background-color: #3d454d;
+        /*background: -moz-linear-gradient(-90deg, #2c952c, #28a956) repeat scroll 0% 0% transparent; 緑
+        background: -webkit-linear-gradient(-90deg, #f2f4f5 #28a956); 緑 */
+        background: -moz-linear-gradient(-90deg, #3d454d, #3d454d) repeat scroll 0% 0% transparent; 
+        background: -webkit-linear-gradient(-90deg, #3d454d, #3d454d);
+
+        color: #fff;
+        border-radius: 3px 3px;
+        font-weight: 500;
+        line-height: 32px;
+
+      }
+      td {
+        line-height: 2;
+        color: #676d74;
+        font-weight: 500;
+        border-radius: 3px 3px;
+      }
+      /*th,td {     font-family: gotham,helvetica,arial,sans-serif; */
+        th,td {
+    font-style: normal;
+    font-weight: 500;
+
+    /*font-size: 0.9em;*/
+    -moz-osx-font-smoothing: grayscale;}
+      th, td { padding: 2px 5px; }
+      /*td.email ,td.password { font-family: monospace; } */
+      td.date { font-family: monospace; text-align: left }
+      td.boolean { text-align: center; }
+      td.numeric { text-align: right; }
+      td.receipt_number { text-align: center;}
+      td.status { color: #2986ec}
+      td.receipt_date, td.start_date, td.end_date { text-align: center; }
+      td.application_money { text-align: right; }
+      td.actions {
+        text-align: center;
+        color: $dark_gray;
+      line-height: 5px;
+      }
+    }
+  }
+
+  table.listing {
+    width: 100%;
+    tr:nth-child(even) { background-color: #f2f4f5 }
+    tr:nth-child(odd) { background-color:  #fdfefe }
+    border-radius: 5px 5px;
+  }
+
+  table.attributes {
+    width: 100%;
+    th { padding-right: $moderate; width: 200px; }
+    td { background-color: #ffffee; }
+  }
+}

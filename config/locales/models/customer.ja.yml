@@ -1,0 +1,43 @@
+ja:
+  activerecord:
+    attributes:
+      customer:
+        company_id: 加盟店コード
+        store_code: 店舗コード
+        store_name: 店舗名
+        top_family_name: 代表者（姓）
+        top_given_name: 代表者（名）
+        top_family_name_kana: 代表者フリガナ（姓）
+        top_given_name_kana: 代表者フリガナ（名）
+        staff_family_name: 担当者（姓）
+        staff_given_name: 担当者（名）
+        staff_family_name_kana: 担当者フリガナ（姓）
+        staff_given_name_kana: 担当者フリガナ（名）
+        postal_code: 郵便番号
+        prefecture: 都道府県
+        city: 市区町村
+        address1: 番地等
+        address2: 方書等
+        telephone_number: 電話番号
+        mobilephone_number: 携帯番号
+        fax_number: FAX番号
+        email: メールアドレス
+        password: パスワード
+        start_date: 開始日
+        end_date: 終了日
+    errors:
+      models:
+        customer:
+          attributes:
+            email:
+              taken: が他の顧客と重複しています。
+            birthday:
+              after_or_equal_to: には1900年1月1日以降の日付を指定してください。
+              before: が未来の日付です。
+            start_date:
+              after_or_equal_to: には2000年1月1日以降の日付を指定してください。
+              before: には1年後の日付より前の日付を指定してください。
+            end_date:
+              after_or_equal_to: には2000年1月1日以降の日付を指定してください。
+              before: には1年後の日付より前の日付を指定してください。
+              after: には開始日より後の日付を指定してください。

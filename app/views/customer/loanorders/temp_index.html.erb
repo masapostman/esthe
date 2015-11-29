@@ -1,0 +1,71 @@
+<% @title = '追跡中' %>
+<div class="header_second">
+  <div id="update_time"><%= (I18n.l @max, format: :full_date) + ' の追跡くんです...'%></div>
+  <div class="search">
+  <% if session[:parent_and_child] =='親' then %>
+        <%= render 'parent_search_form' %>
+  <% else %>
+        <%= render 'child_search_form' %>
+  <% end %>
+
+  </div>
+</div>
+<div class="table-wrapper">
+
+<%= paginate @loanorders %>
+<table class="listing">
+  <thead>
+    <tr>
+      <th width="150px">受　付　番　号</th>
+      <th width="100px">申　込　日</th>
+      <th width="120px">氏　　名</th>
+      <th width="110px">申　込　金　額</th>
+
+      <th width="300px" colspan="2">ス　テ　ー　タ　ス</th>
+      <th width="100px">入　金　日</th>
+      <% if session[:parent_and_child] == '親' then %>
+        <th >店　舗　名</th>
+      <% end %>
+      <th width="110px">信　販　会　社</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @loanorders.each do |loanorder| %>
+      <tr>
+        <td width="150px" class="receipt_number"><%= loanorder.receipt_number %></td>
+        <td width="100px" class="order_date" style="text-align:center;"><%= loanorder.order_date %></td>
+        <td width="120px" class="name"><%= loanorder.user_name %></td>
+        <td width="110px" class="application_money"><%= number_with_delimiter(loanorder.application_money) %></td>
+
+        <td width="60px" class="status"><%= loanorder.old_status %></td>
+        <% if loanorder.status == '受付〜審査中' then %>
+                <td width="240px" class="status"><%= loanorder.status %></td>
+        <% else %>
+                <td width="240px" class="status"><%= loanorder.status %></td>
+        <% end %>
+        <% if loanorder.status == '原本が到着しました。' then %>
+                <td width="240px" class="status">
+                <div class="tooltip">
+                <p> 
+                <a href="#css" title="ご郵送頂きありがとうございます。<br/>確認のうえ立替の手続きを進めていきます。"><%= loanorder.old_status %>
+                </a>
+                </p>
+                </div>
+                </td>
+        <% else %>
+                <td width="240px" class="status"><%= loanorder.status %></td>
+        <% end %>
+        <td width="100px" class="charge_date" style="text-align:center;"><%= loanorder.charge_date %></td>
+        <% if session[:parent_and_child] == '親' then %>
+          <td class="name"><%= loanorder.store_name %></td>
+        <% end %>
+        <td width="110px" class="name"><%= loanorder.loan_company_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+

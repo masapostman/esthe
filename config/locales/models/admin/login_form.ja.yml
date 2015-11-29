@@ -1,0 +1,12 @@
+ja:
+  activemodel:
+    attributes:
+      admin/login_form:
+        email: メールアドレス
+        password: パスワード
+    errors:
+      models:
+        admin/login_form:
+          attributes:
+            email: を入力してください。
+            password: を入力してください。

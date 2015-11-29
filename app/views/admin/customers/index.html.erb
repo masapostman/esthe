@@ -1,0 +1,55 @@
+<% @title = 'お客様管理' %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+
+  <div class="links">
+    <%= link_to '新規登録', :new_admin_customer %>
+  </div>
+
+  <%= paginate @customer %>
+
+  <table class="listing">
+    <tr>
+      <th>ｺｰﾄﾞ</th>
+      <th>加盟店名</th>
+      <th>ｺｰﾄﾞ</th>
+      <th>店舗名</th>
+      <th>区分</th>  
+      <th>担当者名</th>
+      <th>メールアドレス</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>停止フラグ</th>
+      <th>アクション</th>
+    </tr>
+    <% @customer.each do |m| %>
+      <% p = CustomerPresenter.new(m, self) %>
+      <tr>
+        <td style="text-align:right;"><%= m.company_id %></td>
+        <td><%= m.company_name %></td>
+        <td style="text-align:right;"><%= format('%02d',m.store_code) %></td>
+        <td><%= m.store_name %></td>
+        <td style="text-align:center;"><%= m.parent_and_child %></td>
+        <td><%= m.staff_family_name %> <%= m.staff_given_name %></td>
+        <td class="email"><%= m.email %></td>
+        <td class="date"><%= m.start_date.try(:strftime, '%Y/%m/%d') %></td>
+        <td class="date"><%= m.end_date.try(:strftime, '%Y/%m/%d') %></td>
+        <td class="boolean"><%= p.suspended_mark %></td>
+        <td class="actions">
+          <%= link_to '印刷', [ :print, :admin, m ,format: 'pdf'] %> |
+          <%= link_to '編集', [ :edit, :admin, m ] %> |
+          <%= link_to '削除', [ :admin, m ], method: :delete,
+            data: { confirm: '本当に削除しますか？' } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @customer %>
+
+  <div class="links">
+    <%= link_to '新規登録', :new_admin_customer %>
+  </div>
+
+</div>

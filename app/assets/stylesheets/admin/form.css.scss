@@ -1,0 +1,93 @@
+@import 'colors';
+@import 'dimensions';
+
+div#wrapper {
+  div#container {
+    div#generic-form {
+      width: 540px;
+      margin: $very_wide auto;
+      padding: $very_wide;
+      border-radius: $wide;
+      border: solid 2px #c0c0c0;
+      background-color: $very_light_gray;
+
+      form {
+        div {
+          padding: 5px;
+          label {
+            display: block;
+            padding: $moderate 0;
+          }
+          label.required:after {
+            content: '*';
+            padding-left: $narrow;
+            color: $red;
+          }
+          input[type='checkbox']+label { display: inline-block }
+          input[type='radio']+label { display: inline-block }
+          span.instruction { font-size: $small; color: $dark_gray; }
+          div.field-value { margin-left: $wide; font-weight: bold; }
+          div.readonly { color: $dark-gray; }
+          span.field-value { font-weight: bold; }
+        }
+        div.input-block {
+          input { margin-right: $narrow * 2; }
+        }
+        div.notes {
+          text-align: right;
+          font-size: $small;
+          span.mark { color: $red }
+        }
+        input#edit_submit {
+          text-align: center;
+           /* input[type='submit'] { */
+          padding: $wide $very_wide;
+          width: 100px;
+          height: 34px;
+          /*margin-left: 110px;
+          margin-right: 20px; */
+          background: #468cc8;
+          border: solid 1px;
+          /*font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;*/
+          font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "MS Pゴシック", sans-serif;
+          color: #ffffff;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          /*} */
+        }
+        a#edit_cancel {
+          text-align: center;
+          padding: 12.4px  20px    5px 20px;
+          width: 60px;
+          height: 30px;
+          border: solid 1px;
+          background: #c1c6cb;
+          color: #ffffff;
+          text-decoration: none;
+          /*font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;*/
+          font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "MS Pゴシック", sans-serif;
+          background-size: 58px 12px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+        }
+        div.field_with_errors {
+          display: inline;
+          padding: 0;
+          label { color: $red; }
+          input, textarea { background-color: $pink; }
+        }
+        div.with-errors {
+          label { color: $red; }
+          input, select { background-color: $pink; }
+        }
+        div.error-message {
+          color: $red;
+          font-size: $small;
+          padding: 0 ;
+        }
+      }
+    }
+  }
+}

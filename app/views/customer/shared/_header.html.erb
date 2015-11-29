@@ -1,0 +1,53 @@
+<nav class="viewport viewport-h l-navbar-primary" id="header">
+
+    	<h1 id="site_title" class="site_title tabs">
+
+
+      <%= image_tag("JCS-Logo.png" ,size: "64x50",alt: "株式会社ジェイ・シー・エス", align: "HOME"	,:class => "img-left") %>
+
+      </h1>
+      <ul id="tabs" class="tabs header-item">
+
+        <div id="company">
+            <% if current_customer %>
+                   <% if session[:parent_and_child] == '親' then %>
+                     <%= session[:company_name] %>様
+                  <% else  %>
+                     <%= session[:store_name] %>様
+                  <% end %>
+           <% end %>
+        </div>
+      </ul>
+      <h1 id="site_title_1" class="site_title">
+
+    	<%=
+    	  if  current_customer
+            image_tag("run.png" ,size: "48x40",alt: "追跡中です", align: "HOME"  ,:class => "img-left")
+    	  else
+        		image_tag("lay.png" ,size: "50x40",alt: "サインイン", align: "HOME"	,:class => "img-left")
+        end
+        %>
+      </h1>
+
+  		<ul id="utility_nav" class="tabs header-item" >
+        <ui id="password_change" class="tabs header-item">
+
+              <% if current_customer %>
+                  <%= link_to 'パスワード変更', :edit_customer_password %>
+              <%  end %>
+
+        </ui>
+
+  		</ul>
+      <ul id="utility_nav_1" class="tabs header-item" >
+
+          <ui id="current_user" class="tabs">
+            <%=
+                if current_customer
+                    link_to 'ログアウト', :customer_session, method: :delete
+                end
+            %>
+          </ui>
+      </ul>
+
+</nav>

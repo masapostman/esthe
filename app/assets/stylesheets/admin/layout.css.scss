@@ -1,0 +1,201 @@
+
+body {
+    /*font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;*/
+    font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "MS Pゴシック", sans-serif;
+    line-height: 150%;
+    font-size: 80%;
+    background: none repeat  scroll 0% 0% #FFF;
+    margin: 0px;
+    padding: 0px;
+    color: #323537;
+    height: 100%;
+
+}
+body.logged_out {
+    background: none repeat scroll 0% 0% #FFF;
+}
+.index #wrapper {
+    display: table;
+}
+#wrapper {
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+
+
+#header {
+    /*background: -moz-linear-gradient(-90deg, #6A7176, #4D5256) repeat scroll 0% 0% transparent;
+    background: -webkit-linear-gradient(-90deg, #6a7176, #4d5256);
+    background: linear-gradient(-90deg, #6a7176, #4d5256);*/
+    background: #2b333b;
+    /*border-bottom: 1px solid #44484B;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.37);*/
+    text-shadow: 0px 1px 0px #000;
+    display: table;
+    height: 20px;
+    width: 100%;
+    overflow: visible;
+    position: inherit;
+    padding: 5px 0px;
+    z-index: 900;
+}
+#header h1 {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #CDCDCD;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    padding: 3px 30px 0px;
+    font-size: 1.3em;
+    font-weight: normal;
+    line-height: 1.2;
+}
+h1 {
+    font-size: 2em;
+    line-height: 1;
+    margin-bottom: 0.5em;
+    margin-left: 0.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    color: #5E6469;
+}
+#menu {
+
+    margin-left: 15px;
+} 
+#menu li {
+    margin-top: 12px;
+
+    font-size: 1.5em;
+    font-weight: normal;
+    list-style-type: square;
+    color: #7995ba;
+}
+#header #tabs {
+    width: 100%;
+}
+#header ul.tabs {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+}
+#header .header-item {
+    top: 2px;
+    position: relative;
+    height: 40px;
+}
+ul {
+    list-style-type: disc;
+}
+ul, ol {
+    margin: 0px 1.5em 1.5em 0px;
+    padding-left: 1.5em;
+}
+ol, ul {
+    list-style: outside none none;
+}
+#header #utility_nav {
+    color: #AAA;
+    display: table-cell;
+    white-space: nowrap;
+    margin: 0px;
+    padding: 0px 26px 0px 0px;
+    text-align: right;
+}
+#header #utility_nav a:hover {
+text-decoration: none;
+color: #fff;
+background-color: #7b8389;
+/*padding: 6px 10px 4px 10px;*/
+padding-top: 6px;
+padding-bottom: 4px;
+padding-left: 10px;
+padding-right: 5px;
+position: relative;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+/*header #utility_nav a:hover {
+    color: #FFF; 
+
+
+
+}
+*/
+#header #utility_nav a {
+    text-decoration: none;
+
+}
+
+#update-datetime p{
+    text-align: right;
+    padding-right: 10px;
+}
+
+
+
+
+#header a, #header a:link {
+    color: #CDCDCD;
+    text-decoration: none;
+}
+a, a:link, a:visited {
+    color: #38678B;
+    text-decoration: none;
+    /*text-decoration: underline; */
+}
+.menu {
+    padding: 20px;
+}
+.menu h1 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #323537;
+}
+.menu ul {
+    margin: 0 ;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.2;
+    list-style: none;
+}
+.menu li a {
+    padding: 10px 15px 10px 30px;
+    position: relative;
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+.menu li a:hover {
+    background-color: #eee;
+}
+.menu li a::before {
+    position: absolute;
+    left: 5px;
+    top:  12px;
+    content: asset_url("listmark.png");
+}
+footer {
+  bottom: 0;
+  position: fixed !important;
+  position: absolute;
+  width: 100%;
+  /*background-color: #5a6064;*/
+  background-color: #2B333B;
+  color: white;
+  height: 17px;
+  margin-top: 5px;
+  p {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+}

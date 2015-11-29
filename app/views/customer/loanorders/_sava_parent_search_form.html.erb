@@ -1,0 +1,24 @@
+<%= form_for @search_form, as: 'search', url: :customer_loanorders,
+	html: { method: :get,class: "search_parent"} do |f| %>
+  <ul>
+  <li>
+  <label class ="labelfield" ><span>店舗選択</span></label>
+  <%= f.collection_select(:store_code,@customer.order(:store_code),:store_code,:store_name,
+  {:class => "easy-select-box",:include_blank => true}) %>
+	</li>
+
+
+
+<li>
+<label class ="labelfield" for="search_order_date_from"><span>申込日</span></label>
+<input class="search_datepicker" id="search_order_date_from" name="search[order_date_from]" type="text" value="">
+
+<label for="search_order_date_to">〜　</label><input class="search_datepicker" id="search_order_date_to" name="search[order_date_to]" type="text" value="">
+
+<input class="btn btn-blue" type="submit" value="検　索">
+<input class="btn btn-blue" value="クリア" id="resets">
+
+</li>
+</ul>
+
+<% end %>

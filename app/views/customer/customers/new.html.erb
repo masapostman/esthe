@@ -1,0 +1,13 @@
+<% @title = '新規ユーザ情報登録' %>
+<h1><%= @title %></h1>
+
+<div id="generic-form">
+  <%= form_for @customer ,url: confirm_customer_customer_path,
+   method: :patch do |f| %>
+    <%= render 'form', f: f %>
+    <div class="buttons">
+      <%= f.submit '確認画面へ進む' %>
+      <%= link_to 'キャンセル', :customer_root %>
+    </div>
+  <% end %>
+</div>

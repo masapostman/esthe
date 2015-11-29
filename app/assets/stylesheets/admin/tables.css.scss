@@ -1,0 +1,42 @@
+div.table-wrapper {
+	width: 100%;
+	margin: 0 auto;
+
+	div.links {
+		text-align: right;
+		padding:0px 30px 0px 0px;
+	}
+	div.links_narrow {
+		text-align: right;
+		padding:0px 360px 0px 0px;
+	}
+	table {
+		margin: 2px auto 0;
+		border: solid 2px #ccc;
+
+		tr {
+			th {
+				background-color: #666666;
+				color: #fafafa;
+			}
+			th, td {padding: 10px;font-size: 14px;}
+			td.email {font-family: monospace}
+			td.date {font-family: monospace; text-align:center;}
+			td.boolean {text-align: center;}
+			td.actions {
+				text-align: center;
+				color: #fafafa;
+			}
+		}
+	}
+	table.listing {
+		width:100%;
+		tr:nth-child(even) {background-color: #fafafa;}
+		tr:nth-child(odd) {background-color: #eeeeee;} 
+	}
+	table.listing_narrow {
+		width:50%;
+		tr:nth-child(even) {background-color: #fafafa;}
+		tr:nth-child(odd) {background-color: #eeeeee;} 
+	}
+}

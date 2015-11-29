@@ -1,0 +1,5 @@
+report.start_new_page do |page|
+  page.values user_id: @customer.email
+  page.values init_password = @customer.init_password
+ 
+end

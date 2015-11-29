@@ -1,0 +1,1 @@
+<%= f.collection_select :customer,:store_name, Loanorder.select(:company_code, :company_name,:store_code, :store_name).uniq, :store_code, :store_name %>

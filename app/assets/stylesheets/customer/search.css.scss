@@ -1,0 +1,216 @@
+@import 'colors';
+@import 'dimensions';
+form.search_parent {
+  padding: 10px 10px 0px 10px;
+  /*border: solid #e0e2e3 1px;*/
+  border: solid #c5c3c3 2px;
+  background-color: #fdfefe;
+  width: 520px;
+  /*height: 55px; */
+
+   margin: 0 70px 0 auto;
+  border-radius: 8px 8px;
+  ul {
+    padding: 0;
+    margin: 0;
+
+  }
+  li {
+  list-style:none;
+  margin:0px;
+  padding:5px;
+  /*border-top: 2px solid #FFF; */
+  font-size: 12px;
+}
+  input#search_order_date_from {
+    text-align: center;
+    width: 95px;
+    height: 28px;
+    margin-right: 10px;
+    color: #676d74;
+  }
+  input#search_order_date_to {
+    text-align: center;
+    width: 95px;
+    height: 28px;
+    margin-right: 30px;
+    color: #676d74;
+  }
+
+}
+form.search_child {
+  padding: 10px 10px 0px 10px;
+  /*border: solid #e0e2e3 1px;*/
+  border: solid #c5c3c3 2px;
+  background-color: #fdfefe;
+  width: 510px;
+  /*height: 55px; */
+
+   margin: 0 70px 0 auto;
+  border-radius: 8px 8px;
+  ul {
+    padding: 0;
+    margin: 0;
+
+  }
+  li {
+  list-style:none;
+  margin:0px;
+  padding:5px 5px 5px 0px;
+  /*border-top: 2px solid #FFF; */
+  font-size: 12px;
+}
+  input#search_order_date_from {
+    text-align: center;
+    width: 95px;
+    height: 28px;
+    margin: 0px 10px;
+    color: #676d74;
+  }
+  input#search_order_date_to {
+    text-align: center;
+    width: 95px;
+    height: 28px;
+    margin-right: 15px;
+    color: #676d74;
+  }
+
+}
+form.search_parent div {
+  display:inline-block;
+}
+/*form.search_parent label {
+  width:5em;
+  display: block;
+  height: 23px;
+  margin-top:8px;
+  font-size: 14px;
+  float: left;
+  color: #676d74;
+} */
+.from_label {
+  width:5em;
+  display: block;
+  height: 23px;
+  margin-top:8px;
+  font-size: 14px;
+  float: left;
+  color: #676d74;
+}
+.to_label {
+  width:2em;
+  display: block;
+  height: 23px;
+  margin-top:8px;
+  font-size: 14px;
+  float: left;
+  color: #676d74;
+}
+form.search_child div {
+  display:inline-block;
+}
+/*form.search_child {
+  padding: $wide;
+  border: solid $dark_gray 1px;
+  background-color: $very_light_gray;
+  width: 440px;
+  height: 28px;
+  margin: 0 70px 0 auto;
+
+  border-radius: 10px 10px;
+  div {
+    display: inline-block;
+    padding: 0;
+    margin: 6px 10px 6px 0px;
+    label { margin-right: 3px; }
+  }
+  input#search_order_date_from {
+  	text-align: center;
+  	width: 80px;
+    height: 28px;
+    margin-right: 10px;
+  }
+  input#search_order_date_to {
+  	text-align: center;
+  	width: 80px;
+    height: 28px;
+    margin-right: 10px;
+  } 
+
+}*/
+/*button.btn {
+    margin-right: 2px;
+    color: #ffffff;
+    background-color: #6a7176;
+  }
+*/
+#search_store_code{
+  background: #ffe;
+  border: 1px solid #c5c3c3;
+  border-radius: 5px;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+  text-align:left;
+  font-size:14px;
+  color:#676d74;
+  height: 28px;
+  width: 340px;
+}
+#search_order_date_from,#search_order_date_to {
+  border: 1px solid #c5c3c3 ;
+  border-radius: 5px;
+  background-color: #ffe;
+}
+.labelfield {
+  width:5em;
+  display: block;
+  height: 23px;
+  margin-top:8px;
+  font-size: 14px;
+  float: left;
+  color: #676d74;
+}
+.labeltotal {
+  width:8em;
+  display: block;
+  height: 23px;
+  margin-top:8px;
+  font-size: 14px;
+  float: left;
+  color: #676d74;
+}
+.header_second {
+  display: table;
+  margin-top: 8px;
+}
+.search {
+  display: table-cell;
+}
+#container {
+    background: #ffffff;
+}
+
+#total {
+    text-align: right;
+    height: 23px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #676d74;
+}
+#update_time {
+    display: table-cell;
+    padding: 10px 115px 10px 70px;
+    font-size: 30px;
+    color: #3d454d;
+}
+#application_money {
+  padding-right: 2px;
+}
+#status {
+  padding-left: 2px;
+}
+#name {
+  padding-left: 2px;
+}
+
+

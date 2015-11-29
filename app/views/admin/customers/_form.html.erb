@@ -1,0 +1,21 @@
+<%= markup do |m|
+  p = CustomerFormPresenter.new(f, self)
+  m << p.notes
+  m << p.collection_select_block(:company_id,'加盟店',Company.order(:company_code),:company_code,:company_name,required: true)
+  m << p.text_field_block(:store_code, '店舗コード', size: 2, required: true)
+  m << p.text_field_block(:store_name, '店舗名', size: 60, required: true)
+  m << p.parent_and_child_field_block
+
+  m << p.full_name_block(:staff_family_name, :staff_given_name, '担当者氏名', size: 32, required: true)
+  m << p.full_name_block(:staff_family_name_kana, :staff_given_name_kana, '担当者フリガナ', size: 32, required: true)
+
+  m << p.text_field_block(:email, 'メールアドレス', size: 32 ,required: true)
+
+  m << p.date_field_block(:start_date, '開始日', required: true)
+  m << p.date_field_block(:end_date, '終了日', required: false)
+
+  m << p.check_boxes
+
+
+end %>
+

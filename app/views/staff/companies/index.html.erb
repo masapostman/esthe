@@ -1,0 +1,26 @@
+<% @title = '加盟店一覧' %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+
+
+  <%= paginate @companies %>
+
+  <table class="listing">
+    <tr>
+      <th>加盟店コード</th>
+      <th>加盟店名</th>
+    </tr>
+    <% @companies.each do |m| %>
+      <% p = CustomerPresenter.new(m, self) %>
+      <tr>
+        <td><%= m.company_code %></td>
+        <td><%= m.company_name %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @companies %>
+
+
+</div>

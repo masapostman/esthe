@@ -1,0 +1,14 @@
+<% @title = 'システム管理者メニュー' %>
+
+<div class="menu">
+	<h1><%= @title %></h1>
+
+	<ul>
+	  <li><%= link_to 'システム担当者管理', :admin_staff_members %></li>
+	  <li><%= link_to 'システム担当者のログイン・ログアウト記録', :admin_staff_events %></li>
+		<li><%= link_to '加盟店マスタ管理', :admin_companies %></li>
+	  <li><%= link_to 'お客様管理', :admin_customers %></li>
+	  <li><%= link_to '申込データ一覧', :admin_loanorders %></li>
+	  <li><%= link_to 'インポート操作履歴', :admin_import_logs %></li>
+	</ul>
+</div>

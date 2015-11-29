@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= document_title%></title>
+  <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="index admin_admin_users active_admin logged_in admin_namespace">
+	<div id="wrapper">
+		<div id="container">
+			<% @title = 'ログイン' %>
+
+
+		</div>
+		<%= render 'shared/footer' %>
+	</div>
+
+</body>
+</html>

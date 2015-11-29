@@ -1,0 +1,13 @@
+<% @title = '新規ユーザ情報登録' %>
+<h1><%= @title %></h1>
+
+<div id="generic-form">
+  <%= form_for @customer ,url: customer_customer_path do |f| %>
+  <p>以下の内容でアカウントを更新します。よろしいですか？</p>
+    <%= render 'confirming_form', f: f %>
+    <div class="buttons">
+      <%= f.submit '登録' %>
+      <%= link_to '訂正', name: 'collect' %>
+    </div>
+  <% end %>
+</div>

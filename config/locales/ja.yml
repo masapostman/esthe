@@ -1,0 +1,9 @@
+ja:  
+  activemodel:
+    attributes:  
+      admin/login_form:
+        email: "メールアドレス"
+        password: "パスワード"
+  time:
+    formats:
+      full_date: "%Y年%m月%d日 (%a) %H:%M"

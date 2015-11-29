@@ -1,0 +1,52 @@
+<nav class="viewport viewport-h l-navbar-primary" id="header">
+
+    	<h1 id="site_title" class="site_title tabs">
+
+    <%= 
+      if current_staff_member 
+        link_to 'Menu', :staff_root, class: 'logo-mark' 
+      else
+        image_tag("JCS-Logo.png" ,size: "64x50",alt: "株式会社ジェイ・シー・エス", align: "HOME" ,:class => "img-left")
+      end 
+    %>
+
+      </h1>
+      <ul id="tabs" class="tabs header-item">
+        <%= content_tag(:span, flash.notice, class: 'notice') if flash.notice %>
+        <%= content_tag(:span, flash.alert, class: 'alert') if flash.alert %>
+      </ul>
+      <h1 id="site_title_1" class="site_title">
+
+    	<%=
+    	  if  current_staff_member
+            image_tag("run.png" ,size: "48x40",alt: "追跡中です", align: "HOME"  ,:class => "img-left")
+    	  else
+        		image_tag("lay.png" ,size: "50x40",alt: "サインイン", align: "HOME"	,:class => "img-left")
+        end
+        %>
+      </h1>
+
+  		<ul id="utility_nav" class="tabs header-item" >
+        <ui id="password_change" class="tabs header-item">
+
+              <% if current_staff_member %>
+                  <%= link_to 'アカウント', :staff_account %>
+              <%  end %>
+
+        </ui>
+
+  		</ul>
+      <ul id="utility_nav_1" class="tabs header-item" >
+
+          <ui id="current_user" class="tabs">
+            <%=
+                if current_staff_member
+                    link_to 'サインアウト', :staff_session, method: :delete
+                else
+                    link_to 'サインイン', :staff_login
+                end
+            %>
+          </ui> 
+      </ul>
+
+</nav>

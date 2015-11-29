@@ -1,0 +1,28 @@
+<% @title = 'ログイン' %>
+
+<div id="content_wrapper">
+  <div id="active_admin_content">
+    <div id="login">
+      <h2>管理者ログイン</h2>
+      <%= form_for @login_form, url: :admin_session do |f| %>
+      <%= markup do |m|
+        p = FormPresenter.new(f,self)
+        m.fieldset(class: 'inputs') do
+          m.ol do
+            m.li(id: 'admin_user_email_input', class: 'email_input required autofocus stringish') do
+
+              m <<  p.text_field_block(:email, 'メールアドレス')
+            end
+            m.li(id: 'admin_user_password_input', class: 'password input required stringish') do
+              m << p.password_field_block(:password, 'パスワード')
+            end
+          end
+        end
+      end %>
+      <div>
+        <%= f.submit 'ログイン' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

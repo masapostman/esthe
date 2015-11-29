@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      company:
+        company_code: 加盟店コード
+        company_name: 加盟店名
+    errors:
+      models:
+        company:
+          attributes:
+            company_code:
+              taken: が他の加盟店と重複しています。

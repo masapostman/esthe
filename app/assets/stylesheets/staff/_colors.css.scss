@@ -1,0 +1,21 @@
+/* グレー系 */
+
+$dark_gray: #666666;
+/*$gray: #cccccc; */
+$gray: #f8f8ea;
+$light_gray: #eeeeee;
+/*$very_light_gray: #fafafa; */
+$very_light_gray: #522800;
+
+/* シアン系 */
+
+/*$dark_cyan: #448888; */
+$dark_cyan: #efefbc;
+$very_dark_cyan: darken($dark_cyan, 7%);
+
+/* 赤系 */
+$red: #cc0000;
+$pink: #ffcccc;
+
+/* 緑系 */
+$green: #00cc00;

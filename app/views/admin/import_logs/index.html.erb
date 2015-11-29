@@ -1,0 +1,26 @@
+<%
+    @title = 'インポート操作履歴一覧'
+%>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+
+  <%= paginate @logs %>
+
+  <table class="listing">
+    <tr>
+      <th>操作者（メールアドレス）</th>
+      <th>日時</th>
+      <th>ファイル名</th>
+    </tr>
+    <% @logs.each do |log| %>
+      <tr>
+        <td><%= log.email %></td>
+        <td><%= log.import_datetime.strftime("%Y年%m月%d日 %H時%M分%S秒") %></td>
+        <td><%= log.import_filename %></td>
+    <% end %>
+  </table>
+
+  <%= paginate @logs %>
+
+</div>

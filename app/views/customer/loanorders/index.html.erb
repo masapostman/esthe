@@ -1,0 +1,115 @@
+<% @title = '追跡中' %>
+<div class="header_second">
+  <div id="update_time"><%= (I18n.l @max, format: :full_date) + ' の追跡くんです...'%></div>
+  <div class="search">
+  <% if session[:parent_and_child] =='親' then %>
+        <%= render 'parent_search_form' %>
+  <% else %>
+        <%= render 'child_search_form' %>
+  <% end %>
+
+  </div>
+</div>
+<div class="table-wrapper">
+
+
+<%= paginate @loanorders %>
+<table class="listing">
+  <thead>
+    <tr>
+      <th width="150px">受　付　番　号</th>
+      <th width="100px">申　込　日</th>
+      <th width="120px">氏　　名</th>
+      <th width="110px">申　込　金　額</th>
+
+      <th width="300px" colspan="2">ス　テ　ー　タ　ス</th>
+      <th width="100px">入　金　日</th>
+      <% if session[:parent_and_child] == '親' then %>
+        <th >店　舗　名</th>
+      <% end %>
+      <th width="110px">信　販　会　社</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @loanorders.each do |loanorder| %>
+      <tr>
+        <td width="150px" class="receipt_number"><%= loanorder.receipt_number %></td>
+        <td width="100px" class="order_date" style="text-align:center;"><%= loanorder.order_date %></td>
+        <td width="120px" class="name"><%= loanorder.user_name %></td>
+        <td width="110px" class="application_money"><%= number_with_delimiter(loanorder.application_money) %></td>
+
+        <td width="60px" class="status"><%= loanorder.old_status %></td>
+        <% case loanorder.status 
+            when '受付～審査中' %>
+               <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("reciept.png" ,size: "38x42",alt: "OK", align: "HOME"  ,:class => "img-left") %><br />
+                お申し込みありがとうございます。<br />FAXが届きましたので、内容を確認のうえ審査を進めていきます。</span></a></td>
+        <%  when  '審査が保留中です。'  %>
+               <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("pendding.png" ,size: "38x42",alt: "OK", align: "HOME"  ,:class => "img-left") %><br />
+                不備があって審査が進んでおりません。<br />申し訳ございませんが、弊社までお問い合わせください。</span></a></td>
+
+        <% when  '１次審査ＯＫ（お客様の確認待ち）'  %>
+                <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("ok.png" ,size: "38x42",alt: "OK", align: "HOME"  ,:class => "img-left") %><br />
+                お客様へご指定の日時にご連絡致します。</span></a></td>
+
+        <% when '１次審査ＯＫ（再指定待ち）' %>
+                <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("ok.png" ,size: "38x42",alt: "OK", align: "HOME"  ,:class => "img-left") %><br />
+                お客様が電話に出られませんでした。<br />ご都合の良い時間をご指定ください。</span></a></td>
+
+        <% when 'キャンセル待ち' %>
+                <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("ok.png" ,size: "38x42",alt: "OK", align: "HOME"  ,:class => "img-left") %><br />
+                以下の何れかの理由によりキャンセル待ちの状態です。<br />・お客様からキャンセルの希望があったため。<br /> (
+                正式な回答をご連絡ください。）<br />・前回のオーダーから金額、支払い変更があったため。<br /> （前回オーダーのキャンセルをお願いします）
+                <br />・前回オーダーから組替での申込のため<br /> （前回オーダーの解約をお願いします）</span></a></td>
+
+        <% when '本人確認終了（再ＦＡＸ待ち）' %>
+                <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("ok.png" ,size: "38x42",alt: "OK", align: "HOME"  ,:class => "img-left") %><br />
+                不備を修正の上再度ＦＡＸをお願いします。</span></a></td>
+
+        <% when '原本をご郵送下さい。' %>
+                <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("wait.png" ,size: "38x42",alt: "OK", align: "HOME"  ,:class => "img-left") %><br />
+                期限内に送付をお願いします。</span></a></td>
+
+        <% when '原本が到着しました。' %>
+                <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("arrival.png" ,size: "38x42",alt: "OK", align: "HOME"  ,:class => "img-left") %><br />
+                ご郵送ありがとうございます。<br />内容を確認のうえ立替の手続きを進めていきます。</span></a></td>
+
+        <% when '立替完了' %>
+                <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("finish.png" ,size: "38x42",alt: "OK", align: "HOME"  ,:class => "img-left") %><br />
+                立替が完了しました。</span></a></td>
+
+        <% when '次こそは必ず！' %>
+                <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("ng.png" ,size: "38x42",alt: "否決", align: "HOME"  ,:class => "img-left") %><br />
+                申し訳ございません。<br />審査がお断りとなりました。</span></a></td>
+
+        <% when '取消' %>
+                <td width="240px" class="status"><a href='javascript:void(0);'>
+                <%= loanorder.status %><span class="fukidasipop"><%= image_tag("cancel.png" ,size: "38x42",alt: "否決", align: "HOME"  ,:class => "img-left") %><br />
+                取消となっています。</span></a></td>
+
+        <% else %>
+                <td width="240px" class="status"><%= loanorder.status %></td>
+        <% end %>
+        <td width="100px" class="charge_date" style="text-align:center;"><%= loanorder.charge_date %></td>
+        <% if session[:parent_and_child] == '親' then %>
+          <td class="name"><%= loanorder.store_name %></td>
+        <% end %>
+        <td width="110px" class="name"><%= loanorder.loan_company_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+

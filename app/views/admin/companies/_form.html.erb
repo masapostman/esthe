@@ -1,0 +1,9 @@
+<%= markup do |m|
+  p = CustomerFormPresenter.new(f, self)
+  m << p.notes
+
+  m << p.text_field_block(:company_code, '加盟店コード', size: 4, required: true)
+  m << p.text_field_block(:company_name, '加盟店名', size: 60, required: true)
+
+end %>
+

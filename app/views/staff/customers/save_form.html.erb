@@ -1,0 +1,42 @@
+<%= f.label :加盟店名 %>
+<%= f.collection_select :company_code, Loanorder.select(:company_code, :company_name).uniq, :company_code, :company_name,include_blank: true %></br>
+<%= f.label :店舗名 %>
+<%= f.select :store_code, options_for_select(@loanorders.collect { |store| [store.store_name,
+   store.store_code] },0),{},{ id: 'stores_select'} %>
+ 
+<%= markup do |m|
+  p = CustomerFormPresenter.new(f, self)
+  m << p.notes
+
+
+  m << p.full_name_block(:top_family_name, :top_given_name, '代表者氏名', size: 32, required: true)
+  m << p.full_name_block(:top_family_name_kana, :top_given_name_kana, '代表者フリガナ', size: 32, required: true)
+
+
+  m << p.full_name_block(:staff_family_name, :staff_given_name, '担当者氏名', size: 32, required: true)
+  m << p.full_name_block(:staff_family_name_kana, :staff_given_name_kana, '担当者フリガナ', size: 32, required: true)
+
+  m << p.text_field_block(:postal_code, '郵便番号', size: 7, required: true)
+  m << p.drop_down_list_block(:prefecture, '都道府県', Customer::PREFECTURE_NAMES)
+
+ 
+
+  m << p.text_field_block(:city, '市区町村', size: 16, required: true)
+  m << p.text_field_block(:address1, '町域、番地等', size: 40, required: true)
+  m << p.text_field_block(:address2, '建物名、部屋番号等', size: 40)
+
+
+  m << p.text_field_block(:telephone_number, '電話番号')
+  m << p.text_field_block(:mobilephone_number, '携帯番号')
+  m << p.text_field_block(:fax_number, 'FAX番号')
+
+  m << p.text_field_block(:email, 'メールアドレス', size: 32 ,required: true)
+
+  m << p.date_field_block(:start_date, '開始日', required: true)
+  m << p.date_field_block(:end_date, '終了日', required: false)
+
+  m << p.check_boxes
+
+
+end %>
+

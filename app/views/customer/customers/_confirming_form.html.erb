@@ -1,0 +1,17 @@
+<%= markup do |m|
+  p = ConfirmingUserFormPresenter.new(f, self)
+  m << p.text_field_block(:company_name, '会社名またはサロン名', size: 64, required: true)
+  m << p.full_name_block(:top_family_name, :top_given_name, '氏名', size: 32, required: true)
+  m << p.full_name_block(:top_family_name_kana, :top_given_name_kana, 'フリガナ', size: 32, required: true)
+  m << p.full_name_block(:staff_family_name, :staff_given_name, '氏名', size: 32, required: true)
+  m << p.full_name_block(:staff_family_name_kana, :staff_given_name_kana, 'フリガナ', size: 32, required: true)
+  m << p.text_field_block(:zip_code, '郵便番号', size: 7, required: true)
+  m << p.text_field_block(:prefecture, '都道府県', required: true)
+  m << p.text_field_block(:city, '市区町村', size: 64, required: true)
+  m << p.text_field_block(:address1, '番地等', size:64, required:true)
+  m << p.text_field_block(:telephone_number, '電話番号')
+  m << p.text_field_block(:mobilephone_number, '携帯番号')
+  m << p.text_field_block(:fax_number, 'FAX番号')
+  m << p.text_field_block(:email, 'メールアドレス', size: 32 ,required: true)
+  m << p.password_field_block(:password, 'パスワード', size: 32, required:true)
+end %>

@@ -1,0 +1,23 @@
+<%= form_for @search_form, as: 'search', url: :customer_loanorders,
+	html: { method: :get,class: "search_child"} do |f| %>
+
+	<%= markup do |m|
+    p = FormPresenter.new(f, self)
+
+    m << p.date_field_block(:order_date_from, '申込日',class:"search_",　id:"search_order_date_form")
+
+    m << p.date1_field_block(:order_date_to, '〜　',class:"search_",id:"search_order_date_to")
+
+  end %>
+    <%= button_tag sanitize('検　索'), :type => "submit",
+    :class =>"btn btn-blue" ,:id=>"search"%>
+     <%= button_tag sanitize('クリア'),
+    :class =>"btn btn-blue ",:id=>"reset"%>
+   <li>
+    <div class="input-block">
+      <label class ="labeltotal" ><span>申込金額合計</span></label>
+      <div id="total"><%= number_with_delimiter(@total[@company_code])%> 円</div>
+    </div>
+  </li> 
+
+<% end %>

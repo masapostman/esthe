@@ -1,0 +1,237 @@
+.index #wrapper {
+    display: table;
+}
+#wrapper {
+    width: 100%;
+    padding-bottom: 1em;
+    min-height: 100%;
+    height: auto !important;
+    height:100%;
+    background: #ffffff;
+}
+
+
+#header {
+    /*background: -moz-linear-gradient(-90deg, #2b333b, #2b333b) repeat scroll 0% 0% transparent;
+    background: -webkit-linear-gradient(-90deg, #2b333b, #2b333b); 
+    background: linear-gradient(-90deg, #2b333b, #2b333b); */
+    background-color: #2b333b;
+    display: table;
+    height: 20px;
+    width: 100%;
+    overflow: visible;
+    padding: 5px 0px;
+    z-index: 900;
+}
+
+#header h1 {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #fff; 
+    margin-right: 20px;
+    margin-bottom: 0px;
+    padding: 3px 30px 0px 0px;
+    font-size: 1.3em;
+    font-weight: normal;
+    line-height: 1.2;
+}
+#header-company {
+    margin-left: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #676d74;
+    padding: 10px;
+}
+h1 {
+    font-size: 2em;
+    line-height: 1;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    color: #fff;
+}
+.alert {
+    font-weight: 500;
+    color: #cc000a;
+    margin-top: 2px;
+}
+.notice {
+    font-weight: 500;
+    color: #676d74;
+    line-height: 1;
+}
+
+#header #site_title {
+    width: 50px;
+}
+#header #tabs {
+    width: 430px;
+}
+#header #tabs-login {
+    width: 100%;
+}
+#header ul.tabs {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+}
+// Google Chrome, Safari, Opera 15+, Android, iOS
+::-webkit-input-placeholder {
+    color: #85898c; 
+    font-size: 0.9em;
+}
+
+// Firefox 18-
+:-moz-placeholder {
+    color: #85898c; 
+}
+
+// Firefox 19+
+::-moz-placeholder {
+    color: #85898c; 
+}
+
+// IE 10+
+:-ms-input-placeholder {
+    color: #85898c; 
+}
+#header ul#main_title {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+#main_title_moji {
+    font-size: 18px ;
+    color: #fff;
+}
+#header .header-item {
+    top: 2px;
+    position: relative;
+    height: 20px;
+    padding-right: 20px;
+}
+ul {
+    list-style-type: disc;
+}
+ul, ol {
+    margin: 0px 1.5em 1.5em 0px;
+    padding-left: 1.5em;
+}
+ol, ul {
+    list-style: outside none none;
+}
+#header #utility_nav{
+    color: #AAA;
+    display: table-cell;
+    white-space: nowrap;
+    margin: 0px 5px 0 5px; 
+    width: 100px;
+    text-align: right;
+
+}
+#header #utility_nav_1{
+    color: #AAA;
+    display: table-cell;
+    white-space: nowrap;
+    width: 100px;
+    padding: 0px 35px 0px 0px;
+    text-align: right;
+}
+#header #utility_nav a:hover {
+text-decoration: none;
+color: #fff;
+background-color: #808080;
+padding: 5px 0px 5px 0px;
+position: relative;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+#header #utility_nav_1 a:hover {
+text-decoration: none;
+color: #fff;
+background-color: #808080;
+padding: 5px 0px 5px 0px;
+position: relative;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+#header #utility_nav a {
+    text-decoration: none;
+
+}
+#header #site_title_1 {
+    padding-right: 300px;
+    padding-left: 0px;
+    vertical-align: bottom;
+}
+
+#header a, #header a:link {
+    color: #f8f8f8;
+}
+a, a:link, a:visited {
+    /*color: #38678B;*/
+    text-decoration: none;
+}
+
+
+footer {
+  bottom: 0;
+  position: fixed !important;
+  position: absolute;
+  width: 100%;
+  /*background-color: #5a6064;*/
+  background-color: #2b333b ;
+  height: 17px;
+  p {
+    text-align: center;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+}
+ 
+
+.pop a:hover{ /*マウスが乗ったら*/
+        position: relative;
+        top: 0px; left: 0px;
+}
+.fukidasipop { /*吹き出し本体*/
+        position: absolute;
+        top:350px; left:850px;
+
+        display: none; /*何も表示しない*/
+        padding: 5px; /*内側の余白*/
+        width: 400px; /*ブロックの幅*/
+        /*height: 150px;*/
+        font-weight: bold; /*文字の太さ*/
+        text-decoration: none; /*文字飾り*/
+        color: #ffffff; /*文字色*/
+        background-color: #6eadf1; /*背景色#6699ff*/
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+
+        /*border-top:white solid 10px;
+        border-left:#b22222 solid 10px; */
+
+     filter: alpha(opacity=90); /* IE */
+　　-moz-opacity:09; /*Firefox */
+  　opacity:0.9; /* Opera・Safari */
+}
+a:hover .fukidasipop {
+        display: block; /*ブロック要素で表示*/
+} 
+

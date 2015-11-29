@@ -1,0 +1,52 @@
+<h1>申込データ一覧</h1>
+
+
+
+<div class="table-wrapper">
+
+<%= render 'search_form' %>
+<%= paginate @loanorders %>
+<div id="update-datetime"><p>最終更新日：<%= @max.in_time_zone.strftime("%Y年%m月%d日 %H時%M分%S秒")%></p></div>
+<table class="listing">
+  <thead>
+    <tr>
+      <th>申込日</th>
+      <th colspan="2">加　盟　店</th>
+      <th colspan="2",width="50px">店　　舗</th>
+
+      <th>信販会社名</th>
+      <th>受付番号</th>
+      <th>申込金額</th>
+      <th>氏　　　名</th>
+      <th>状　　　　　況</th>
+      <th>入 金 日</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loanorders.each do |loanorder| %>
+      <tr>
+        <td style="text-align:center;"><%= loanorder.order_date %></td>
+        <td style="text-align:center;"><%= loanorder.company_code %></td>
+        <td><%= loanorder.company_name %></td>
+        <td style="text-align:center;"><%= loanorder.store_code %></td>
+        <td><%= loanorder.store_name %></td>
+        <td><%= loanorder.loan_company_name %></td>
+        <td style="text-align:center;"><%= loanorder.receipt_number %></td>
+        <td style="text-align:right;"><%= number_with_delimiter(loanorder.application_money) %></td>
+        <td><%= loanorder.user_name %></td>
+        <td><%= loanorder.status %></td>
+        <td style="text-align:center;"><%= loanorder.charge_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+  <%= paginate @loanorders %>
+
+<!-- ページの一番下に追加 -->
+<%= form_tag import_staff_loanorders_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "インポート" %>
+  </div>
+<% end %>
