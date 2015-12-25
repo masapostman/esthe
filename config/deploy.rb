@@ -5,7 +5,8 @@ set :rails_env, "production"
 
 server "tsuiseki-kun.co.jp" ,:web, :app, :db, primary: true
 #server "160.16.53.5" ,:web, :app, :db, primary: true
-set :repository, "ssh://git@bitbucket.org/masafumi_sougumo/esthe.git"
+#set :repository, "ssh://git@bitbucket.org/masafumi_sougumo/esthe.git"
+set :repository, "https://github.com/masapostman/esthe.git"
 set :scm, :git
 set :branch, "master"
 set :user, "esthe"
